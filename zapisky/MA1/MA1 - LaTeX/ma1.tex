@@ -1,0 +1,75 @@
+\documentclass[12pt, a4paper]{scrartcl}
+\usepackage{graphicx}
+\usepackage{dsfont}
+
+\title{Matematická analýza 1}
+\date{2025/2026}
+
+\begin{document}
+    \maketitle
+
+    \tableofcontents
+
+    \section{Výroková logika}
+    \subsection{Výrok}
+    Výrok -- oznamovací věta, u které má smysl se bavit o pravdivosti, 
+    avšak pravdivost nemusí být zjistitelná. O výroku, pro který lze 
+    o pravdivosti rozhodnout a zároveň je pravdivý říkáme, že je dokazatelný.
+
+    Příklady:
+    \begin{itemize}
+        \item{Venku prší. -- je výrok.}
+        \item{$1 + 1 = 2$ -- je výrok.}
+        \item{Běž ven. -- není výrok.}
+        \item{$x + 2 = 3$ -- není výrok.}   
+    \end{itemize}
+
+    \subsection{Negace výroku}
+    Negace výroku -- má opačnou pravdivostní hodnotu.
+    ``Není pravda, že A.`` Zapisuje se jako $\rceil A$
+    %Ekšly je tohle asi nejsložitější věc z toho všeho, 
+    %ale nevěnovali jsme tomu pozornost lmao, takže se k tomu někdy vrátím.
+    
+    \subsection{Složené výroky}
+    Složené výroky -- výroky lze spojovat do složených výroků pomocí logických spojek.
+
+    \begin{itemize}
+        \item{Konjukce ($\wedge$) -- ``A a zároveň B.``}
+        \item{Disjukce ($\vee$) -- ``A nebo B.``}
+        \item{Implikace ($\Rightarrow$) -- ``Pokud A, potom B.`` ``Je-li A, potom B.``}
+        \item{Ekvivalence ($\Leftrightarrow$) -- ``A právě tehdy, když B.`` (Pozn.: (A $\Rightarrow$ B) $\wedge$ (A $\Rightarrow$ B))}
+    \end{itemize}
+
+    Tabulka pravdivostních hodnot:
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        A & B & $\rceil$A & A $\wedge$ B & A $\vee$ B & A $\Rightarrow$ B & A $\Leftrightarrow$ B \\
+        \hline
+        1 & 1 & 0 & 1 & 1 & 1 & 1 \\
+        \hline
+        1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        \hline
+        0 & 1 & 1 & 0 & 1 & 1 & 0 \\
+        \hline
+        0 & 0 & 1 & 0 & 0 & 1 & 1 \\
+        \hline
+    \end{tabular}
+
+    \subsubsection{Vztahy v implikaci}
+    Implikace A $\Rightarrow$ B. A je dostačující podmínka pro B. B je nutná podmínka pro A.
+    Ukážeme si to na příkladu. (Pozn.: $m|n$ značí ``$n$ je dělitelné $m$``.)
+
+    \[\forall (n \in \mathds{N}): 6|n \Rightarrow 3|n\]
+    Přeloženo do češtiny, pro každé přirozené $n$ platí: 
+    Jestliže číslo 6 dělí $n$, pak číslo 3 dělí $n$.
+    $\forall (n \in \mathds{N}): 6|n$ je pouze dostačující podmínkou, protože každé $n$, které je dělitelné třemi
+    nezaručuje, že je zároveň dělitelné šesti.
+
+    Druhým příkladem může být:
+    \[6|2 \Rightarrow 3|2\]
+    Opět přeloženo, jestliže 6 dělí 2, pak 3 dělí 2. Tato implikace je pravdivá, 
+    protože podmínka ``6 dělí 2`` není splněna. Implikace nic neslibuje, pokud předpoklad neplatí.
+
+    $\rceil A \Rightarrow \rceil B$ je obměněná implikace.
+    $B \Rightarrow A$ říkáme obrácená implikace.
+\end{document}

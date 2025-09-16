@@ -1,0 +1,154 @@
+\documentclass[12pt, a4paper]{scrartcl}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{dsfont}
+\usepackage{multicol}
+
+\title{Lineární algebra}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+
+    \section{Komplexní čísla}
+    Komplexní čísla jsou rozšířením oboru reálných čísel.
+    V algebraickém tvaru se zapisují jako $a + bi$,
+    kde $a,b \in \mathds{R}$. $a$ nazýváme reálnou a $b$ imaginární částí. 
+
+    \subsection{Operace s komplexními čísly}
+    Sčítání, odčítání a násobení funguje tak, jak bychom čekali.
+    \[z = 1 + 4i\]
+    \[u = -2 + 3i\]
+    \[z + u=(1 + 4i) + (-2 + 3i) = -1 + 7i\]
+    \[z - u=(1 + 4i) - (-2 + 3i) = 3 + i\]
+    \[z * u=(1 + 4i) * (-2 + 3i) = -14 - 5i\]
+
+    Dělení je speciální případ. Pro dělení dvou 
+    komplexních čísel rozšíříme zlomek komplexně sdruženým číslem jmenovatele,
+    které získáme obrácením prostředního znaménka.
+    \[\frac{u}{z} = \frac{u}{z} * \frac{\bar{z}}{\bar{z}} =
+    \frac{-2 + 3i}{1 + 4i} * \frac{1 - 4i}{1 - 4i}=\frac{-2 + 3i + 8i - 12i^2}{1 - 4i + 4i - 16i^2} =
+    \frac{10 + 11i}{17} = \frac{10}{17} + \frac{11}{17}i\]
+
+    \subsection{Goniometrický tvar}
+    K zapsání goniometrického tvaru nám postačí absolutní hodnota komplexního
+    čísla a úhel, který svírá s osou $x$.
+
+    \[z = |z| * (\cos \alpha + i \sin \alpha)\]
+
+    Příklad 1: $z = -1$ \\
+    Goniometrický tvar: $z = 1 * (\cos \pi)$
+
+    Příklad 2: $|z| = \sqrt{2}; \alpha = \frac{7}{4} \pi$ \\
+    Goniometrický tvar: $z = \sqrt{2} * (\cos \frac{7 \pi}{4} + i * \sin \frac{7 \pi}{4})$
+    
+    \subsubsection{Moivreova věta}
+    Moivreova věta nám slouží k umocňování a odmocňování komplexních čísel.
+    \[z^n = |z|^n * (\cos \frac{\alpha + 2k \pi}{n} + i \sin \frac{\alpha + 2k \pi}{n})\]
+    \[\sqrt[n]{z} = \sqrt[n]{|z|} * (\cos \frac{\alpha + 2k \pi}{n} + i \sin \frac{\alpha + 2k \pi}{n})\]
+
+    Příklad:
+    \begin{align*}
+        \sqrt[3]{-1} &= \cos \frac{\pi + 2k \pi}{3} + i \sin \frac{\pi + 2k \pi}{3}, \quad k \in \{0,1,2\} \\
+        k = 0: &\quad \sqrt[3]{-1} = \cos \frac{\pi}{3} + i \sin \frac{\pi}{3} = \frac{1}{2} + i \frac{\sqrt{3}}{2} \\ 
+        k = 1: &\quad \sqrt[3]{-1} = \cos \frac{3\pi}{3} + i \sin \frac{3\pi}{3} = -1 \\ 
+        k = 2: &\quad \sqrt[3]{-1} = \cos \frac{5\pi}{3} + i \sin \frac{5\pi}{3} = \frac{1}{2} - i \frac{\sqrt{3}}{2} 
+    \end{align*}
+    \section{Analytická geometrie}
+    \subsection{Vektor}
+    Pro $n \in \mathds{N}$ se zapisuje jako $\vec{u} = (u_1, u_2, \dots, u_n)$
+    
+    \subsubsection{Vektorový součin}
+    Je definována pouze na dvou vektorech v $\mathds{R}^3$. 
+    Výsledkem je vektor na ně kolmý.
+    \[\vec{u} = (u_1, u_2, u_3)\]
+    \[\vec{v} = (v_1, v_2, v_3)\]
+    \begin{equation*}
+        \vec{u}\times \vec{v} = 
+        \begin{pmatrix}
+            u_2 v_3 - u_3 v_2 \\
+            u_3 v_1 - u_1 v_3 \\
+            u_1 v_2 - u_2 v_1
+        \end{pmatrix}
+    \end{equation*}
+
+    \textbf{Pozor!} $\vec{u}\times \vec{v} \neq \vec{v}\times \vec{u}$.
+    Oba vektory jsou kolmé, ale každý na opačnou stranu.
+
+    \subsection{Přímka}
+    Parametrické rovnice přímky se zapisují jako $X = A + \vec{u} t$, 
+    kde $A = [a_1, a_2, a_3]; \vec{u} = (u_1, u_2, u_3)$.
+    \[x = a_1 + u_1 t\]
+    \[y = a_2 + u_2 t\]
+    \[z = a_3 + u_3 t\]
+
+    Příklad: Nalezněte průsečík X přímek $p$ a $q$
+    \begin{multicols}{2}
+        \begin{equation*}
+            p:\;\begin{aligned}
+            x &= 1 + t \\
+            y &= -2 + t \\
+            z &= -1 - t
+            \end{aligned}
+        \end{equation*}
+
+        \begin{equation*}
+            q:\;\begin{aligned}
+            x &= 0 + s \\
+            y &= 1 - s \\
+            z &= -2
+            \end{aligned}
+        \end{equation*}
+    \end{multicols}
+
+    \begin{multicols}{4}
+        \begin{equation*}
+            \begin{aligned}
+                1 + t &= 0 + s \\
+                -2 + t &= 1 - s \\
+                -1 - t &= -2
+            \end{aligned}
+        \end{equation*}
+
+        \begin{equation*}
+            \begin{aligned}
+                t - s &= -1 \\
+                t + s &= 3 \\
+                t &= 1
+            \end{aligned}
+        \end{equation*}
+
+        \begin{equation*}
+            \begin{aligned}
+                1 - s &= -1 \\
+                1 + s &= 3 \\
+                t &=1
+            \end{aligned}
+        \end{equation*}
+
+        \begin{equation*}
+            \begin{aligned}
+                s &= 2 \\
+                s &= 2 \\
+                t &= 1
+            \end{aligned}
+        \end{equation*}
+    \end{multicols}
+
+    Jelikož se parametry $s$ v první i druhé rovnici shodují, tak mají přímky průsečík. 
+    Souřadnice bodu X získáme dosazením parametru $t$ do parametrických rovnic přímky p
+    \begin{equation*}
+        X:\;\begin{aligned}
+            x &= 1 + t = 1 + 1 = 2 \\
+            y &= -2 + t = -2 + 1 = -1 \\
+            z &= -1 - t = -1 - 1 = -2
+        \end{aligned}
+    \end{equation*}
+
+    \subsection{Rovina}
+    Parametrické rovnice roviny se zapisují jako $X = A + t \vec{u} + s \vec{v}$, 
+    kde $A = [a_1, a_2, a_3]; \vec{u} = (u_1, u_2, u_3); \vec{v} = (v_1, v_2, v_3)$.
+    \[x = a_1 + u_1 t + v_1 s\]
+    \[y = a_2 + u_2 t + v_2 s\]
+    \[z = a_3 + u_3 t + v_3 s\]
+\end{document}
