@@ -55,21 +55,29 @@
         \hline
     \end{tabular}
 
+    \subsubsection{Pravdivost implikace}
+    Implikace $A \Rightarrow B$ je pravdivá vždy, když platí předpoklad $A$ a současně i závěr $B$, 
+    nebo když předpoklad $A$ neplatí.  
+
+    Například (Pozn.: $m|n$ značí ``$n$ je dělitelné $m$``.):
+    \[ 6|2 \Rightarrow 3|2\]
+    Jestliže 6 dělí 2, pak 3 dělí 2. Tato implikace je pravdivá, 
+    protože podmínka ``6 dělí 2`` není splněna. Implikace tedy nic neslibuje, pokud předpoklad neplatí.
+
+    Za zmínku stojí i související pojmy:
+    \begin{itemize}
+        \item $\rceil A \Rightarrow \rceil B$ je \textbf{obměněná implikace}.
+        \item $B \Rightarrow A$ se nazývá \textbf{obrácená implikace}.
+    \end{itemize}
+
     \subsubsection{Vztahy v implikaci}
-    Implikace A $\Rightarrow$ B. A je dostačující podmínka pro B. B je nutná podmínka pro A.
-    Ukážeme si to na příkladu. (Pozn.: $m|n$ značí ``$n$ je dělitelné $m$``.)
+    Implikace $A \Rightarrow B$. A je \textbf{dostačující podmínka} pro B. 
+    B je \textbf{nutná podmínka} pro A.  
+
+    Ukážeme si to na příkladu.
 
     \[\forall (n \in \mathds{N}): 6|n \Rightarrow 3|n\]
-    Přeloženo do češtiny, pro každé přirozené $n$ platí: 
-    Jestliže číslo 6 dělí $n$, pak číslo 3 dělí $n$.
-    $\forall (n \in \mathds{N}): 6|n$ je pouze dostačující podmínkou, protože každé $n$, které je dělitelné třemi
+    Přeloženo: pro každé přirozené $n$ platí: jestliže číslo 6 dělí $n$, pak číslo 3 dělí $n$.  
+    Výrok ``$6|n$`` je pouze dostačující podmínkou, protože každé $n$, které je dělitelné třemi, 
     nezaručuje, že je zároveň dělitelné šesti.
-
-    Druhým příkladem může být:
-    \[6|2 \Rightarrow 3|2\]
-    Opět přeloženo, jestliže 6 dělí 2, pak 3 dělí 2. Tato implikace je pravdivá, 
-    protože podmínka ``6 dělí 2`` není splněna. Implikace nic neslibuje, pokud předpoklad neplatí.
-
-    $\rceil A \Rightarrow \rceil B$ je obměněná implikace.
-    $B \Rightarrow A$ říkáme obrácená implikace.
 \end{document}
