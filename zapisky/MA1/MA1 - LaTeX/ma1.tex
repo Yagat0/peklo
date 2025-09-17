@@ -1,6 +1,8 @@
 \documentclass[12pt, a4paper]{scrartcl}
 \usepackage{graphicx}
 \usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 \title{Matematická analýza 1}
 \date{2025/2026}
@@ -80,4 +82,41 @@
     Přeloženo: pro každé přirozené $n$ platí: jestliže číslo 6 dělí $n$, pak číslo 3 dělí $n$.  
     Výrok ``$6|n$`` je pouze dostačující podmínkou, protože každé $n$, které je dělitelné třemi, 
     nezaručuje, že je zároveň dělitelné šesti.
+
+    \section{Množiny}
+    \begin{itemize}
+        \item Omezená zdola -- $\exists\, d \in \mathds{R} \ \forall\, x \in A : x \geq d$
+        \item Omezená shora -- $\exists\,  h \in \mathds{R} \ \forall\, x \in A : x \leq h$
+        \item Negace om. shora -- $ \forall\,  h \in \mathds{R}\, \exists\, x \in A: x > h$
+        \item Omezená shora i zdola -- konjunkce $(\wedge)$ obou zápisů
+    \end{itemize}
+
+    Minimum -- ideální dolní hranice (u omezených množin / intervalů)
+
+    Infimum -- dolní hranice, nemusí být součástí množiny / intervalu, ale plní funkci minima
+
+    Maximum -- ideální horní hranice (u omezených množin / intervalů)
+
+    Supremum -- horní hranice, nemusí být součástí množiny / intervalu, ale plní funkci maxima
+
+    Př.: $A = < 1; \infty )$ -- $\exists \min A = \inf A = 1$ a $\sup A = +\infty$, ale $\nexists \max A$
+
+    Př.: $A = (1; \infty )$ -- $\exists \inf A = 1$ a $\sup A = +\infty$ -- ale $\nexists \min A$ ani $\nexists \max A$
+
+    Každá množina má supremum i infimum, ale nemusí mít minimum a maximum
+
+    \section{Cvičení}
+    \subsection{1. cvičení 17. 9. 2025}
+    \subsubsection{Příklad 1}
+    \begin{enumerate}
+        \item $\min A = -4 ;\max A = 10 ;\inf A = -4 ;\sup A = 10$
+        \item $\min A = \nexists ;\max A = 6 ;\inf A = -2 ;\sup A = 6$
+        \item x
+        \item $\min A = 2 ;\max A = 4 ;\inf A = 2 ;\sup A = 4$
+        \item $\min A = \nexists ;\max A = \nexists ;\inf A = 1 ;\sup A = 5$ Pozn.: zde se narozdíl od celých čísel můžeme příblížit ideální dolní/horní hranici
+        \item x 
+        \item x 
+        \item $\min A = \nexists ;\max A = 1 ;\inf A = -\infty ;\sup A = 1$
+        \item $\min A = \nexists ;\max A = \nexists ;\inf A = -\infty ;\sup A = 3$ // $x * (x^2 - x - 6) < 0 = x * (x-3)*(x+2) < 0$ // interval bude vypadat: $(-\infty ; -2) \cup (0; 3)$
+    \end{enumerate}
 \end{document}
